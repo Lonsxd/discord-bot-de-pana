@@ -1,0 +1,66 @@
+const Discord = require('discord.js');
+
+const client = new Discord.Client();
+
+function presence(){
+    client.user.setPresence({
+        status: "online",
+        activity: {
+            name: "de pana lessgoooo 🤑👍",
+            type: "PLAYING"
+        }
+    });
+}
+
+const prefix = '!';
+
+const fs = require ('fs');
+
+client.commands = new Discord.Collection();
+
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
+for(const file of commandFiles){
+    const command = require(`./commands/${file}`);
+ 
+    client.commands.set(command.name, command);
+}
+
+client.once('ready', ()  => {
+    console.log('de pana bot is online!')
+    presence();
+});
+
+client.on('message', message =>{
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+
+    if(command === 'ping'){
+        client.commands.get('ping').execute(message, args);
+    }
+    if(command === 'elcrack'){
+        client.commands.get('elcrack').execute(message, args)
+    }
+    if(command === 'patata_mixty'){
+        client.commands.get('patata_mixty').execute(message, args)
+    }
+    if(command === 'miketeo'){
+        client.commands.get('miketeo').execute(message, args)
+    }
+    if(command === 'hola'){
+        client.commands.get('hola').execute(message, args)
+    }
+    if(command === 'takisdemango'){
+        client.commands.get('takisdemango').execute(message, args)
+    }
+    if(command === 'yt'){
+        client.commands.get('yt').execute(message, args)
+    }
+    if(command === 'panas'){
+        client.commands.get('panas').execute(message, args)
+    }
+    
+});
+
+client.login(process.env.token);
