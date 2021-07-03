@@ -6,7 +6,7 @@ function presence(){
     client.user.setPresence({
         status: "online",
         activity: {
-            name: "de pana lessgoooo 🤑👍",
+            name: "the best bot ever",
             type: "PLAYING"
         }
     });
@@ -26,7 +26,7 @@ for(const file of commandFiles){
 }
 
 client.once('ready', ()  => {
-    console.log('de pana bot is online!')
+    console.log('leoprovlogs bot is online!')
     presence();
 });
 
@@ -39,26 +39,17 @@ client.on('message', message =>{
     if(command === 'ping'){
         client.commands.get('ping').execute(message, args);
     }
-    if(command === 'elcrack'){
-        client.commands.get('elcrack').execute(message, args)
-    }
-    if(command === 'patata_mixty'){
-        client.commands.get('patata_mixty').execute(message, args)
+    if(command === 'fox'){
+        client.commands.get('fox').execute(message, args)
     }
     if(command === 'miketeo'){
         client.commands.get('miketeo').execute(message, args)
     }
-    if(command === 'hola'){
-        client.commands.get('hola').execute(message, args)
-    }
-    if(command === 'takisdemango'){
-        client.commands.get('takisdemango').execute(message, args)
+    if(command === 'hello'){
+        client.commands.get('hello').execute(message, args)
     }
     if(command === 'yt'){
         client.commands.get('yt').execute(message, args)
-    }
-    if(command === 'panas'){
-        client.commands.get('panas').execute(message, args)
     }
     
 });
