@@ -1,7 +1,7 @@
 module.exports = {
-    name: 'elcrack',
-    description: "this is a elcrack command!",
+    name: 'hello',
+    description: "this is a hello command!",
     execute(message, args){
-        message.channel.send('el crack numeros aleatorios 12831372183439279278');
+        message.channel.send('hello wats up bro');
     }
 }
