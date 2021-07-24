@@ -1,2 +1,2 @@
 # discord-bot-de-pana
-el bot 
+just another avarage discord bot 😎
