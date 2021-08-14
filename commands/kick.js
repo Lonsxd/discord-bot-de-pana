@@ -1,15 +1,14 @@
 module.exports = {
     name: 'kick',
-    description: "this is a kick command!",
+    description: "This command kicks a member!",
     execute(message, args){
-        const member = message.mention.users.first();
-        if (member){
-            const memberTarger = message.guild.members.cache.get(member.id);
-            member.memberTarger.kick();
-            message.channel.send("user has been kicked")
-
+        const target = message.mentions.users.first();
+        if(target){
+            const memberTarget = message.guild.members.cache.get(target.id);
+            memberTarget.kick();
+            message.channel.send("User has been kicked");
         }else{
-            message.channel.send('You couldnt kick that member');
+            message.channel.send(`You coudn't kick that member!`);
         }
     }
 }
